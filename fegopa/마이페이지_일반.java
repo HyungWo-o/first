@@ -1,5 +1,6 @@
 package fegopa;
 
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -10,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class 마이페이지_일반 {
 
@@ -38,39 +41,89 @@ public class 마이페이지_일반 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(264, 10, 67, 48);
-		frame.getContentPane().add(btnNewButton);
+		JButton 메인으로이동버튼 = new JButton("");
+		
+		메인으로이동버튼.setBounds(264, 10, 67, 48);
+		frame.getContentPane().add(메인으로이동버튼);
 
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		메인으로이동버튼.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent e) {
+//				frame.dispose();
+				//메인페이지.main(null); //아직 안만듬
+				//메인페이지에 로그인 버튼 만들기
+//			}
+		});
+		
+		
+		JButton 로그아웃버튼 = new JButton("");
+		로그아웃버튼.setBounds(224, 83, 107, 27);
+		frame.getContentPane().add(로그아웃버튼);
+
+		로그아웃버튼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				로그아웃버튼.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						frame.dispose();
+						로그인페이지.main(null); 
+						//정보 초기화 후 메인으로 이동 or 로그인페이지로 이동
+					}
+				});
 			}
 		});
-		btnNewButton_1.setBounds(224, 83, 107, 27);
-		frame.getContentPane().add(btnNewButton_1);
-
-		JButton btnNewButton_1_1 = new JButton("\uBD80\uC2A4\uC2E0\uCCAD");
-		btnNewButton_1_1.setBounds(30, 164, 280, 55);
-		frame.getContentPane().add(btnNewButton_1_1);
-
-		JButton btnNewButton_1_1_2 = new JButton("\uBD80\uC2A4\uC2E0\uCCAD\uC11C_\uC218/\uC0AD");
-		btnNewButton_1_1_2.setBounds(30, 244, 269, 60);
-		frame.getContentPane().add(btnNewButton_1_1_2);
-
-		JButton btnNewButton_1_1_3 = new JButton("\uC2E0\uCCAD\uD604\uD669\uC870\uD68C");
-		btnNewButton_1_1_3.setBounds(30, 324, 269, 60);
-		frame.getContentPane().add(btnNewButton_1_1_3);
-
-		JButton btnNewButton_1_1_4 = new JButton("\uAC1C\uC778\uC815\uBCF4 \uC218/\uD0C8");
-		btnNewButton_1_1_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		JButton 부스신청버튼 = new JButton("\uBD80\uC2A4\uC2E0\uCCAD");
+		부스신청버튼.setBounds(30, 164, 280, 55);
+		frame.getContentPane().add(부스신청버튼);
+		
+		부스신청버튼.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
-				수정탈퇴_일반.main(null);
+				부스신청서.main(null); 
 			}
 		});
-		btnNewButton_1_1_4.setBounds(30, 405, 269, 66);
-		frame.getContentPane().add(btnNewButton_1_1_4);
+
+		JButton 신청서_수정삭제 = new JButton("\uBD80\uC2A4\uC2E0\uCCAD\uC11C_\uC218/\uC0AD");
+		신청서_수정삭제.setBounds(30, 244, 269, 60);
+		frame.getContentPane().add(신청서_수정삭제);
+		
+		신청서_수정삭제.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				부스신청서_수정.main(null); 
+			}
+		});
+
+
+		JButton 신청현황조회버튼 = new JButton("\uC2E0\uCCAD\uD604\uD669\uC870\uD68C");
+		신청현황조회버튼.setBounds(30, 324, 269, 60);
+		frame.getContentPane().add(신청현황조회버튼);
+		
+		신청현황조회버튼.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				일반신청현황조회.main(null); 
+			}
+		});
+
+
+		JButton 개인정보_수정탈퇴버튼 = new JButton("\uAC1C\uC778\uC815\uBCF4 \uC218/\uD0C8");
+		개인정보_수정탈퇴버튼.setBounds(30, 405, 269, 66);
+		frame.getContentPane().add(개인정보_수정탈퇴버튼);
+		
+		개인정보_수정탈퇴버튼.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				수정탈퇴_일반.main(null); 
+				//수정탈퇴 에러뜸
+			}
+		});
+
 
 		JLabel lbl_기관명 = new JLabel("\uC131\uBA85\uB744\uC6B0\uAE30");
 		lbl_기관명.setFont(new Font("굴림", Font.PLAIN, 15));

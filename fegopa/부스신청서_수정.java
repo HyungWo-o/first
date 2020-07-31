@@ -1,13 +1,21 @@
 package fegopa;
 
+
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import DAOVO.신청서_VO;
+
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class 부스신청서_수정 {
 
@@ -20,9 +28,6 @@ public class 부스신청서_수정 {
 	private JTextField textField_5;
 	private JTextField textField_6;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -36,22 +41,14 @@ public class 부스신청서_수정 {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public 부스신청서_수정() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 359, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		
 		
 		textField = new JTextField();
 		textField.setBounds(64, 84, 218, 21);
@@ -88,19 +85,54 @@ public class 부스신청서_수정 {
 		textField_6.setBounds(64, 302, 218, 58);
 		frame.getContentPane().add(textField_6);
 		
-		JButton 뒤로가기 = new JButton("New button");
-		뒤로가기.setBounds(47, 425, 76, 23);
-		frame.getContentPane().add(뒤로가기);
+		JButton 뒤로가기_마페일반 = new JButton("");
+		뒤로가기_마페일반.setBounds(47, 425, 76, 23);
+		frame.getContentPane().add(뒤로가기_마페일반);
+		뒤로가기_마페일반.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				마이페이지_일반.main(null); 
+			}
+		});
+
 		
-		JButton 삭제하기 = new JButton("New button");
+		JButton 삭제하기 = new JButton("");
+		
 		삭제하기.setBounds(135, 425, 76, 23);
 		frame.getContentPane().add(삭제하기);
+		삭제하기.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+//				신청서_VO 신청서_vo = new 신청서_VO();
+				
+				
+				
+				
+				frame.dispose();
+				마이페이지_일반.main(null);
+//				팝업창 띄워서 삭제하시겠습니까 확인 팝업 띄우고 확인 누르면 페이지 이동
+			}
+		});
+		삭제하기.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		
-		JButton 수정완료 = new JButton("New button");
+		JButton 수정완료 = new JButton("");
 		수정완료.setBounds(223, 425, 76, 23);
 		frame.getContentPane().add(수정완료);
+		수정완료.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				마이페이지_일반.main(null); 
+			}
+		});
+
 		
-		JButton 파일불러오기 = new JButton("New button");
+		
+		JButton 파일불러오기 = new JButton("");
 		파일불러오기.setBounds(135, 392, 76, 23);
 		frame.getContentPane().add(파일불러오기);
 		
