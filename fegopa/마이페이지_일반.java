@@ -1,18 +1,19 @@
 package fegopa;
 
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class 마이페이지_일반 {
 
@@ -41,9 +42,10 @@ public class 마이페이지_일반 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JButton 메인으로이동버튼 = new JButton("");
+		JButton 메인으로이동버튼 = new JButton("exit");
 		
 		메인으로이동버튼.setBounds(264, 10, 67, 48);
+
 		frame.getContentPane().add(메인으로이동버튼);
 
 		메인으로이동버튼.addMouseListener(new MouseAdapter() {
@@ -56,7 +58,7 @@ public class 마이페이지_일반 {
 		});
 		
 		
-		JButton 로그아웃버튼 = new JButton("");
+		JButton 로그아웃버튼 = new JButton("로그아웃");
 		로그아웃버튼.setBounds(224, 83, 107, 27);
 		frame.getContentPane().add(로그아웃버튼);
 
@@ -68,6 +70,7 @@ public class 마이페이지_일반 {
 						frame.dispose();
 						로그인페이지.main(null); 
 						//정보 초기화 후 메인으로 이동 or 로그인페이지로 이동
+						//기능구현x
 					}
 				});
 			}
@@ -87,6 +90,7 @@ public class 마이페이지_일반 {
 
 		JButton 신청서_수정삭제 = new JButton("\uBD80\uC2A4\uC2E0\uCCAD\uC11C_\uC218/\uC0AD");
 		신청서_수정삭제.setBounds(30, 244, 269, 60);
+
 		frame.getContentPane().add(신청서_수정삭제);
 		
 		신청서_수정삭제.addMouseListener(new MouseAdapter() {
@@ -129,10 +133,6 @@ public class 마이페이지_일반 {
 		lbl_기관명.setFont(new Font("굴림", Font.PLAIN, 15));
 		lbl_기관명.setBounds(72, 78, 92, 32);
 		frame.getContentPane().add(lbl_기관명);
-
-		JLabel lbl_연락처 = new JLabel("\uC774\uBA54\uC77C\uB744\uC704\uAE30");
-		lbl_연락처.setBounds(72, 114, 92, 15);
-		frame.getContentPane().add(lbl_연락처);
 
 		String url = getClass().getResource("").getPath();
 		Image image17 = new ImageIcon(url + "image/17.png").getImage();
