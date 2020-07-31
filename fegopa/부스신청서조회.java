@@ -1,5 +1,6 @@
 package fegopa;
 
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Image;
@@ -54,6 +55,10 @@ public class 부스신청서조회 {
 		btn_뒤로가기.setBounds(266, 0, 53, 53);
 		btn_뒤로가기.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				frame.dispose();
+				마이페이지_일반.main(null);
+				
 			}
 		});
 		panel.setLayout(null);
@@ -62,11 +67,6 @@ public class 부스신청서조회 {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 155, 295, 296);
 		panel.add(scrollPane);
-		
-		//축제 선택 버튼 누룰시 모든 축제 등록서 조회 창으로 가야하나? 이거 가능? 굳이?
-		JButton btnNewButton = new JButton("\uCD95\uC81C\uC120\uD0DD");
-		btnNewButton.setBounds(12, 79, 181, 23);
-		panel.add(btnNewButton);
 		
 		
 		String url = getClass().getResource("").getPath();

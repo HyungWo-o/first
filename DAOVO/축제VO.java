@@ -1,5 +1,6 @@
 package DAOVO;
 
+
 public class 축제VO {
 	
 	private String 축제ID;

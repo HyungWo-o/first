@@ -1,4 +1,5 @@
 package fegopa;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -47,6 +48,14 @@ public class 마이페이지_주최 {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				frame.dispose();
+				로그인페이지.main(null);
+				
+			}
+		});
 		btnNewButton.setBounds(264, 10, 67, 48);
 		frame.getContentPane().add(btnNewButton);
 		
@@ -78,7 +87,7 @@ public class 마이페이지_주최 {
 		btnNewButton_1_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				축제등록서1.main(null);
+				축제등록서조회.main(null);
 			}
 		});
 		btnNewButton_1_1_2.setBounds(41, 284, 269, 48);
