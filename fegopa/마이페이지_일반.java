@@ -15,8 +15,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class 마이페이지_일반 {
+import DAOVO.일반회원_DAO;
 
+public class 마이페이지_일반 {
+	일반회원_DAO 일반dao = new 일반회원_DAO();
 	private JFrame frame;
 
 	public static void main(String[] args) {
@@ -130,9 +132,13 @@ public class 마이페이지_일반 {
 
 
 		JLabel lbl_기관명 = new JLabel("\uC131\uBA85\uB744\uC6B0\uAE30");
-		lbl_기관명.setFont(new Font("굴림", Font.PLAIN, 15));
-		lbl_기관명.setBounds(72, 78, 92, 32);
+		lbl_기관명.setFont(new Font("굴림", Font.BOLD, 30));
+		lbl_기관명.setText(일반dao.selectID());
+		lbl_기관명.setBounds(73, 89, 92, 32);
 		frame.getContentPane().add(lbl_기관명);
+		
+		
+		
 
 		String url = getClass().getResource("").getPath();
 		Image image17 = new ImageIcon(url + "image/17.png").getImage();
